@@ -1,5 +1,6 @@
 # pg-hba-editor
 
+[![Node.js CI](https://github.com/marcelo-hexsel/pg-hba-editor/actions/workflows/main.yml/badge.svg)](https://github.com/marcelo-hexsel/pg-hba-editor/actions/workflows/main.yml)
 
 ## How to build
 
