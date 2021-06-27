@@ -6,3 +6,9 @@ up: config
 
 down:
 	@docker-compose down
+
+run: 
+	@yarn start:dev
+
+debug: 
+	@yarn start:debug

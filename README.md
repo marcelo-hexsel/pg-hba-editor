@@ -10,3 +10,8 @@ This project uses Node JS 14.x, so you can setup your environment using
 ```
 nvm install 14
 ```
+
+## How to run locally
+
+You will need ```docker``` and ```docker-compose``` to run locally.
+

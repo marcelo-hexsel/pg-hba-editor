@@ -4,20 +4,21 @@ import { AppService } from './app.service';
 
 describe('AppController', () => {
   let appController: AppController;
+  let appService: AppService = jest.createMockFromModule('./app.service');
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
-    }).compile();
-
-    appController = app.get<AppController>(AppController);
+    appController = new AppController(appService);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('/', () => {
+    it('should return call appService for application status', async () => {
+      appService.getApplicationStatus = jest.fn(() =>
+        Promise.resolve('fake application status'),
+      );
+
+      expect(await appController.getApplicationStatus()).toBe(
+        'fake application status',
+      );
     });
   });
-  
 });
