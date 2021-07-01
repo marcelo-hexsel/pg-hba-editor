@@ -2,10 +2,14 @@ config:
 	@mkdir -p ./local_pgdata
 
 up: config
-	@docker-compose up -d --force-recreate pg 
+	@docker-compose up -d -V --force-recreate pg 
 
-down:
+down: clean-postgres-data
 	@docker-compose down
+	@$(MAKE) clean-postgres-data
+
+clean-postgres-data:
+	@rm -rf ./local_pgdata/*
 
 run: 
 	@yarn start:dev

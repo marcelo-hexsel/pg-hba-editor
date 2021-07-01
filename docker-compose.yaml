@@ -10,4 +10,5 @@ services:
       POSTGRES_DB: pg_hba_editor_db
     volumes:
         - ./local_pgdata/:/var/lib/postgresql/data
+        - ./postgres_init/:/docker-entrypoint-initdb.d
 
