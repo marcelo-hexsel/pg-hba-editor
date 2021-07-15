@@ -6,9 +6,11 @@ install:
 test:
 	@yarn test
 
-functional-test:
-	@yarn test:e2e
 
+functional-test: up
+	@yarn test:e2e
+	@$(MAKE) down
+	
 build:
 	@yarn build
 
