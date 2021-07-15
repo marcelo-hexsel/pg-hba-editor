@@ -11,10 +11,10 @@ export class Hbarule {
   @Column({ name: 'type' })
   type: string;
 
-  @Column({ name: 'database', array: true })
+  @Column({ name: 'database', array: true, type: 'text' })
   databases: string[];
 
-  @Column({ name: 'user_name', array: true })
+  @Column({ name: 'user_name', array: true, type: 'text' })
   users: string[];
 
   @Column({ name: 'address' })
@@ -26,6 +26,6 @@ export class Hbarule {
   @Column({ name: 'auth_method' })
   authMethod: string;
 
-  @Column({ name: 'options', array: true })
+  @Column({ name: 'options', array: true, type: 'text' })
   options: string[];
 }

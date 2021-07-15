@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Logger,
 } from '@nestjs/common';
 import { HbaruleService } from './hbarule.service';
 import { CreateHbaruleDto } from './dto/create-hbarule.dto';
@@ -17,7 +18,8 @@ export class HbaruleController {
 
   @Post()
   create(@Body() createHbaruleDto: CreateHbaruleDto) {
-    console.log(createHbaruleDto);
+    Logger.warn(JSON.stringify(createHbaruleDto));
+
     // return this.hbaruleService.create(createHbaruleDto);
   }
 
