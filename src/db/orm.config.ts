@@ -7,6 +7,6 @@ export const ORM_CONFIG = TypeOrmModule.forRoot({
   username: process.env.PG_USER,
   password: process.env.PG_PASSWORD,
   database: process.env.PG_DATABASE,
-  entities: [],
+  entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   synchronize: false,
 });

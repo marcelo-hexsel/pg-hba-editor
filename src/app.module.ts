@@ -7,9 +7,10 @@ const initializedConfigModule = ConfigModule.forRoot();
 
 import { ORM_CONFIG } from './db/orm.config';
 import { DatabaseRepository } from './db/database.repository';
+import { HbaruleModule } from './hbarule/hbarule.module';
 
 @Module({
-  imports: [initializedConfigModule, ORM_CONFIG],
+  imports: [initializedConfigModule, ORM_CONFIG, HbaruleModule],
   controllers: [AppController],
   providers: [AppService, DatabaseRepository],
 })
