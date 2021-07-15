@@ -1,3 +1,14 @@
+.PHONY: test run build config
+
+install:
+	@yarn
+
+test:
+	@yarn test
+
+build:
+	@yarn build
+
 config:
 	@mkdir -p ./local_pgdata
 
@@ -11,7 +22,7 @@ down: clean-postgres-data
 clean-postgres-data:
 	@rm -rf ./local_pgdata/*
 
-run: 
+run: up
 	@yarn start:dev
 
 debug: 
