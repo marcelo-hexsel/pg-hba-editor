@@ -6,6 +6,9 @@ install:
 test:
 	@yarn test
 
+functional-test:
+	@yarn test:e2e
+
 build:
 	@yarn build
 
